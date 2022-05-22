@@ -32,7 +32,6 @@ func (d Downloader) New(threadCount int, chankLimit int, printDebug bool) Downlo
 		threadManager: ThreadManager{}.New(threadCount, printDebug),
 		debug:         printDebug,
 	}
-
 }
 
 func (d *Downloader) reset() {
