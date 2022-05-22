@@ -5,13 +5,15 @@
 ### File of links
 
 ```
-package downloader
+package main
 
+
+import (
+	_ "github.com/DmitriyDev/golibs/downloader"
+)
 const DEBUG = false
 const THREADS = 3
 const CHUNK_SIZE = 10
-
-
 
 func main() {
 
@@ -19,13 +21,4 @@ func main() {
 	dw.FileSource("url_list.txt", "./temp/")
 
 }
-
-
-
-
-    threads := 3
-    chunkSize := 10
-
-	dw := Downloader{}.New(threads, chunkSize)
-	dw.FileSource("hash.txt", "./temp/")
 ```
