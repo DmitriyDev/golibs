@@ -92,5 +92,6 @@ func (tm *ThreadManager) runThread(threadId int, chank LocationChank) {
 		}
 
 	}
+
 	tm.statuses[threadId] = true
 }

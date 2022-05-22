@@ -19,9 +19,10 @@ type LocationChank struct {
 	Locations    []Location
 }
 
-func (lc LocationChank) New() LocationChank {
+func (lc LocationChank) New(resultFolder string) LocationChank {
 	return LocationChank{
-		Locations: []Location{},
+		ResultFolder: resultFolder,
+		Locations:    []Location{},
 	}
 }
 

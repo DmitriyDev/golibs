@@ -41,13 +41,14 @@ func (d *Downloader) reset() {
 	d.counter = 0
 	d.total = 0
 	d.lastChankId = 0
-	d.chunk = LocationChank{}.New()
+
 }
 
 func (d *Downloader) ListSource(urlList []string, resultFolder string) {
 
 	d.reset()
 	d.total = len(urlList)
+	d.chunk = LocationChank{}.New(resultFolder)
 
 	for _, url := range urlList {
 		d.counter++
@@ -72,7 +73,7 @@ func (d *Downloader) ListSource(urlList []string, resultFolder string) {
 			d.threadManager.processChank(d.chunk)
 			d.lastChankId++
 			d.printLog()
-			d.chunk = LocationChank{}.New()
+			d.chunk = LocationChank{}.New(resultFolder)
 
 		}
 
@@ -87,6 +88,7 @@ func (d *Downloader) ListSource(urlList []string, resultFolder string) {
 func (d *Downloader) FileSource(sourceFile string, resultFolder string) {
 
 	d.reset()
+	d.chunk = LocationChank{}.New(resultFolder)
 
 	total, err := d.getUrlCount(sourceFile)
 	if err != nil {
@@ -128,7 +130,7 @@ func (d *Downloader) FileSource(sourceFile string, resultFolder string) {
 			d.threadManager.processChank(d.chunk)
 			d.lastChankId++
 			d.printLog()
-			d.chunk = LocationChank{}.New()
+			d.chunk = LocationChank{}.New(resultFolder)
 		}
 
 	}
