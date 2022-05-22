@@ -30,7 +30,6 @@ func (d Downloader) New(threadCount int, chankLimit int, printDebug bool) Downlo
 		chankLimit:    chankLimit,
 		lastChankId:   0,
 		threadManager: ThreadManager{}.New(threadCount, printDebug),
-		chunk:         LocationChank{}.New(),
 		debug:         printDebug,
 	}
 
