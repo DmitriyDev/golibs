@@ -45,7 +45,7 @@ func (lc *LocationChank) Run(thread int, resChan chan string) {
 			if err != nil {
 				status = append(status, "write error", err.Error())
 			} else {
-				status = append(status, "write OK")
+				status = append(status, "write OK", lc.ResultFolder+loc.Filename)
 			}
 		}
 
