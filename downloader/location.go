@@ -41,6 +41,8 @@ func (lc *LocationChank) Run(thread int, resChan chan string) {
 		if err != nil {
 			status = append(status, "download error", err.Error())
 		} else {
+
+			fmt.Println(lc.ResultFolder + loc.Filename)
 			err = os.WriteFile(lc.ResultFolder+loc.Filename, data, 0644)
 			if err != nil {
 				status = append(status, "write error", err.Error())
