@@ -2,14 +2,19 @@
 
 # Usage 
 
+### Install
+
+```go get github.com/DmitriyDev/golibs/downloader```
+
 ### File of links
+
 
 ```
 package main
 
 
 import (
-	_ "github.com/DmitriyDev/golibs/downloader"
+	dwn "github.com/DmitriyDev/golibs/downloader"
 )
 const DEBUG = false
 const THREADS = 3
