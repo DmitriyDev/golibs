@@ -8,7 +8,11 @@
 # Usage
 
 
-Init with param
+## Percent 
+
+
+
+#### Init with param
 ```
 ...
 
@@ -21,8 +25,7 @@ ip := prb.InlinePrint{}.New(multiplier, lineLength)
 
 ```
 
-
-Init default
+#### Init default
 ```
 ...
 ip := prb.InlinePrint{}.NewDefault() // Default multiplier = 1, lineLength = 140
@@ -33,6 +36,9 @@ ip := prb.InlinePrint{}.NewDefault() // Default multiplier = 1, lineLength = 140
 
 
 ### Percent
+
+![Percent Progressbar](../_img/progressbar.png)
+
 
 ```
 package main
@@ -60,6 +66,8 @@ func main() {
 ```
 
 # Text
+
+![Text Progressbar](../_img/progressbar_text.png)
 
 ```
 
